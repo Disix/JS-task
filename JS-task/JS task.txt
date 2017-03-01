@@ -1,0 +1,34 @@
+function bubbleSort(array) {
+    for(var i=0; i<array.length; i++) {
+    	for(var j=0; j<array.length-1; j++){
+        if(array[j] > array[j+1]){
+        	var tmp = array[j];
+          array[j] = array[j+1];
+          array[j+1] = tmp;
+        }
+      }
+    }
+    return array;
+}
+
+function selectionSort(array) {
+  for(var i=0; i<array.length-1; i++) {
+    	var minElement = Infinity,
+      	  minElementIndex = -1;
+      for(var j=i; j<array.length-1; j++){
+        if(array[j] < minElement){
+        	minElement = array[j];
+          minElementIndex = j;
+        }
+      }
+      var tmp = array[i];
+      array[i] = minElement;
+      array[minElementIndex] = tmp;
+  }
+	return array;
+}
+
+var array = [2, 5, 8, 6, 1, -2, 1000, 6,5];
+
+console.log(bubbleSort(array));
+console.log(selectionSort(array));
